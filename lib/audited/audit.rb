@@ -54,6 +54,8 @@ module Audited
 
       # @private
       def assign_revision_attributes(record, attributes)
+        puts "------assign_revision_attributes-----"
+        puts attributes.inspect
         attributes.each do |attr, val|
           record = record.dup if record.frozen?
 
