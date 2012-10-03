@@ -31,7 +31,7 @@ module Audited
 
         # Return all audits older than the current one.
         def ancestors
-          self.class.where(['auditable_id = ? and auditable_type = ? and version <= ?',
+          self.class.where(['auditable_id = ? and auditable_type = ? and version >= ?',
             auditable_id, auditable_type, version])
         end
 
