@@ -76,6 +76,7 @@ module Audited
       (clazz.find_by_id(auditable_id) || clazz.new).tap do |m|
         puts "xxxx revision"
         puts m.inspect
+        puts ancestors.inspect
         self.class.assign_revision_attributes(m, self.class.reconstruct_attributes(ancestors).merge({ :version => version }))
       end
     end
