@@ -44,6 +44,11 @@ module Audited
           attributes.merge!(audit.new_attributes).merge!(:version => audit.version)
           yield attributes if block_given?
         end
+        puts "results: "
+        puts result.inspect
+        puts "attributes: "
+        puts attributes.inspect
+        puts "******* reconstruct_attributes"
         block_given? ? result : attributes
       end
 
